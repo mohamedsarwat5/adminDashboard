@@ -118,7 +118,7 @@
       "price": 1299.99,
       "stock": 75,
       "sales": 4300,
-      "image": "/images/laptop.jpg"
+      "image": "/images/laptop.webp"
     },
     {
       "id": "#C5D2A89",
@@ -127,7 +127,7 @@
       "price": 249.99,
       "stock": 95,
       "sales": 3100,
-      "image": "/images/table.jpg"
+      "image": "/images/table.webp"
     },
     {
       "id": "#D4B7C34",
@@ -136,7 +136,7 @@
       "price": 49.99,
       "stock": 180,
       "sales": 2500,
-      "image": "/images/mouse.jpg"
+      "image": "/images/mouse.webp"
     },
     {
       "id": "#E3A5623",
@@ -145,7 +145,7 @@
       "price": 119.99,
       "stock": 200,
       "sales": 2000,
-      "image": "/images/shoes.jpg"
+      "image": "/images/shoes.webp"
     }
   ],
   "salesByCategory": [
