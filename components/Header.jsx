@@ -23,8 +23,8 @@ export default function Header() {
                         <Image src={admin} alt='admin' width={35} height={35} className='rounded-full  border border-gray-600' />
                         <span className='hidden sm:block text-gray-100 font-medium '>User Name</span>
                     </div>
+                    <Menu onClick={() => setMenuOpen(true)} className='w-6 h-6 text-gray-300 cursor-pointer hover:text-white lg:hidden ' />
                 </div>
-                <Menu onClick={() => setMenuOpen(true)} className='w-6 h-6 text-gray-300 cursor-pointer hover:text-white lg:hidden ' />
             </div>
         </header>
     );
