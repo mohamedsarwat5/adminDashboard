@@ -58,7 +58,7 @@ export default function Sidebar() {
 
     {/* mobile sidebar */}
 
-    <div className={`${menuOpen ? "translate-x-0" : "translate-x-full"} transition-all duration-300 ease-in-out fixed top-0 bottom-0 end-0 w-8/12 bg-black z-40 px-4 `}>
+    <div className={`${menuOpen ? "translate-x-0" : "translate-x-full"} transition-all duration-300 ease-in-out fixed top-0 bottom-0 end-0 w-9/12 bg-black z-40 px-4 `}>
       <button onClick={()=>setMenuOpen(false)} className='absolute top-4 right-4 p-2 rounded-full hover:bg-[#2f2f2f] transition-colors max-w-fit cursor-pointer '><X size={24} /></button>
 
       <nav className='mt-16  '>
