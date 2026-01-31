@@ -1,4 +1,5 @@
 "use client";
+import CategoryChart from "@/components/CategoryChart";
 import SalesOverviewChart from "@/components/SalesOverviewChart";
 import StatCard from "@/components/StatCard";
 import { motion } from "framer-motion";
@@ -23,6 +24,7 @@ export default function OverviewPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <SalesOverviewChart />
+          <CategoryChart />
         </div>
       </main>
     </div>

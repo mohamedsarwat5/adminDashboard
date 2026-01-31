@@ -1,11 +1,14 @@
-import React from 'react';
+"use client";
+import React, { use, useContext } from 'react';
 import Image from 'next/image';
 import admin from "../public/images/admin.png"
 import uk from "../public/images/uk.png"
-import { Bell } from 'lucide-react';
+import { Bell, Menu } from 'lucide-react';
+import { StoreContext } from '@/StoreContextProvider/StoreContextProvider';
 
 
 export default function Header() {
+    const { menuOpen, setMenuOpen } = useContext(StoreContext);
     return (
         <header className='bg-[#1e1e1e] shadow-lg border-b border-[#1f1f1f] mx-4 sm:mx-6 lg:mx-8 mt-4 mb-2 rounded-lg '>
             <div className='max-w-7xl mx-auto py-4 px-4 sm:px-6 flex items-center justify-between  '>
@@ -21,6 +24,7 @@ export default function Header() {
                         <span className='hidden sm:block text-gray-100 font-medium '>User Name</span>
                     </div>
                 </div>
+                <Menu onClick={() => setMenuOpen(true)} className='w-6 h-6 text-gray-300 cursor-pointer hover:text-white lg:hidden ' />
             </div>
         </header>
     );
