@@ -18,6 +18,7 @@ export default function Header() {
                     </div>
                     <div className='flex items-center space-x-2 sm:space-x-3 '>
                         <Image src={admin} alt='admin' width={35} height={35} className='rounded-full  border border-gray-600' />
+                        <span className='hidden sm:block text-gray-100 font-medium '>User Name</span>
                     </div>
                 </div>
             </div>

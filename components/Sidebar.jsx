@@ -1,0 +1,56 @@
+"use client"
+import { Bell, DollarSign, House, Info, Mail, Menu, Settings, ShoppingBag, ShoppingCart, Users } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+
+const ICONS = {
+  House,
+  DollarSign,
+  Settings,
+  ShoppingBag,
+  ShoppingCart,
+  Mail,
+  Users,
+  Bell,
+  Info,
+}
+
+export default function Sidebar() {
+  const [open, setOpen] = useState(false);
+  const [sidBarItems, setSidBarItems] = useState([])
+  const pathname = usePathname()
+  useEffect(() => {
+    fetch(`/data/data.json`)
+      .then(res => res.json())
+      .then(data => setSidBarItems(data.sidebarItems))
+      .catch(err => console.log(err))
+  }, [])
+
+  return (
+    <div className={`relative z-10 transition-all duration-300 ease-in-out flex shrink-0  ${open ? 'w-64' : 'w-20'} `}>
+      <div className=' h-full bg-[#1e1e1e] backdrop-blur-md p-4 flex flex-col border-r border-[#2f2f2f] w-full '>
+        <button className='p-2 rounded-full hover:bg-[#2f2f2f] transition-colors max-w-fit cursor-pointer ' onClick={() => setOpen(!open)}><Menu size={24} /></button>
+        <nav className='mt-8 flex-1'>
+          {sidBarItems?.map((item, index) => {
+            const IconComponent = ICONS[item.icon];
+            return (
+              <Link key={index} href={item.href}>
+                <div className={`flex items-center p-4 text-sm font-medium rounded-lg hover:bg-[#2f2f2f] transition-colors duration-300 mb-2  ${pathname === item.href ? 'bg-[#2f2f2f]' : ''}`}>
+                  <IconComponent size={20} style={{ minWidth: "20px" }} />
+                  {open && <span
+                    className={`ml-4 whitespace-nowrap transition-all duration-300 ${open ? 'opacity-100' : 'opacity-0 w-0 overflow-hidden'}`}
+                  >
+                    {item.name}
+                  </span>
+                  }
+                </div>
+              </Link>
+            )
+          })}
+        </nav>
+      </div>
+
+    </div>
+  );
+}
